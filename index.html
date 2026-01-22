@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+      /* シンプルで見やすいデザイン */
+      body {
+        font-family:
+          "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+          sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      header {
+        text-align: center;
+        padding: 40px 0;
+      }
+      h1 {
+        margin-bottom: 10px;
+        font-size: 2.5em;
+      }
+      .subtitle {
+        color: #666;
+        font-size: 1.2em;
+      }
+      section {
+        background: #fff;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      h2 {
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+      .project-item {
+        margin-bottom: 20px;
+      }
+      .project-title {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .tags {
+        margin-top: 5px;
+      }
+      .tag {
+        background-color: #eee;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        margin-right: 5px;
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        text-align: center;
+        color: #888;
+        font-size: 0.9em;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>[あなたの名前]</h1>
+      <p class="subtitle">27卒 高専生 / Backend & Game Developer</p>
+      <p>
+        <a href="https://github.com/[あなたのID]" target="_blank">GitHub</a> |
+        <a href="mailto:your.email@example.com">Contact</a>
+      </p>
+    </header>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        情報系高専に在籍しています。2027年卒業予定。<br />
+        「仕組みを理解すること」が好きで、現在はゲーム開発（Unity）やバックエンド技術を中心に学習中です。
+      </p>
+      <p>
+        <strong>最近の関心事:</strong><br />
+        Dockerを使った自作OS環境の構築や、低レイヤーの処理に興味があります。<br />
+        趣味では、好きなアーティストの音作りを研究してエフェクターを自作したり、ハードウェアとソフトウェアの接点を探るのが好きです。
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p>
+        <strong>Languages:</strong> C#, Python, C, Java<br />
+        <strong>Tools & Frameworks:</strong> Unity, Docker, Linux (Ubuntu/WSL),
+        OpenCV<br />
+      </p>
+    </section>
+
+    <section id="works">
+      <h2>Works</h2>
+      <p>※ここにエージェントにまとめてもらった成果物を貼り付けてください</p>
+
+      <div class="project-item">
+        <div class="project-title">3D Pixel Art Game Project</div>
+        <div class="tags">
+          <span class="tag">Unity</span>
+          <span class="tag">C#</span>
+          <span class="tag">Shader Graph</span>
+        </div>
+        <p>
+          Vroidモデルとドット絵シェーダーを使用した、3D空間でのドット絵風ゲーム。<br />
+          独自の世界観を表現するために、シェーダーの調整に注力しました。
+        </p>
+        <a href="#">View on GitHub</a>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Custom OS Development Env</div>
+        <div class="tags">
+          <span class="tag">Docker</span>
+          <span class="tag">C</span>
+          <span class="tag">QEMU</span>
+        </div>
+        <p>
+          「ゼロからのOS自作入門」をベースに、Dockerで再現性のあるビルド環境を構築。<br />
+          クロスコンパイル環境のセットアップをコンテナ化し、環境差異によるエラーを解消しました。
+        </p>
+        <a href="#">View on GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 [あなたの名前]</p>
+    </footer>
+  </body>
+</html>
