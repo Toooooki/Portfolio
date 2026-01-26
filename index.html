@@ -12,51 +12,112 @@
           sans-serif;
         line-height: 1.6;
         color: #333;
-        max-width: 800px;
+        max-width: 960px;
         margin: 0 auto;
-        padding: 20px;
-        background-color: #f9f9f9;
+        padding: 0 20px;
+        background-color: #f4f7f6;
       }
       header {
         text-align: center;
-        padding: 40px 0;
+        padding: 60px 0 40px;
+      }
+      .profile-icon {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 4px solid #fff;
       }
       h1 {
-        margin-bottom: 10px;
+        margin: 0 0 10px 0;
         font-size: 2.5em;
+        letter-spacing: 0.05em;
       }
       .subtitle {
         color: #666;
-        font-size: 1.2em;
+        font-size: 1.1em;
+        margin-bottom: 20px;
       }
       section {
         background: #fff;
-        padding: 30px;
-        margin-bottom: 30px;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        padding: 40px;
+        margin-bottom: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       }
       h2 {
-        border-bottom: 2px solid #333;
+        border-bottom: 2px solid #3b82f6;
         padding-bottom: 10px;
         margin-top: 0;
+        margin-bottom: 30px;
+        display: inline-block;
+        color: #111;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
       }
       .project-item {
-        margin-bottom: 20px;
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+      }
+      .project-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+      .project-media {
+        width: 100%;
+        height: 200px;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .project-media video,
+      .project-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .project-content {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
       }
       .project-title {
         font-weight: bold;
         font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #222;
       }
       .tags {
-        margin-top: 5px;
+        margin-bottom: 15px;
       }
       .tag {
-        background-color: #eee;
-        padding: 2px 8px;
-        border-radius: 4px;
-        font-size: 0.9em;
+        background-color: #e0f2fe;
+        color: #0369a1;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.85em;
         margin-right: 5px;
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+      .project-content p {
+        margin-bottom: 20px;
+        flex-grow: 1;
       }
       a {
         color: #0066cc;
@@ -75,6 +136,7 @@
   </head>
   <body>
     <header>
+      <img src="images/nazunaIcon.png" alt="Lyxsly" class="profile-icon" />
       <h1>Lyxsly</h1>
       <p class="subtitle">27卒 高専生 / Backend & Game Developer</p>
       <p>
@@ -107,34 +169,59 @@
 
     <section id="works">
       <h2>Works</h2>
-      <p>※ここにエージェントにまとめてもらった成果物を貼り付けてください</p>
-
-      <div class="project-item">
-        <div class="project-title">3D Pixel Art Game Project</div>
-        <div class="tags">
-          <span class="tag">Unity</span>
-          <span class="tag">C#</span>
-          <span class="tag">Shader Graph</span>
+      <div class="projects-grid">
+        <div class="project-item">
+          <div class="project-media">
+            <video controls muted playsinline>
+              <source src="videos/Wingardium.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="project-content">
+            <div class="project-title">高専祭 魔法再現プログラム</div>
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">C#</span>
+              <span class="tag">VFX Graph</span>
+            </div>
+            <p>
+              高専祭で展示した、魔法の発動を視覚的に再現するインタラクティブなプログラム。<br />
+              パーティクルシステムを駆使し、没入感のあるエフェクトを実装しました。
+            </p>
+          </div>
         </div>
-        <p>
-          Vroidモデルとドット絵シェーダーを使用した、3D空間でのドット絵風ゲーム。<br />
-          独自の世界観を表現するために、シェーダーの調整に注力しました。
-        </p>
-        <a href="#">View on GitHub</a>
-      </div>
 
-      <div class="project-item">
-        <div class="project-title">Custom OS Development Env</div>
-        <div class="tags">
-          <span class="tag">Docker</span>
-          <span class="tag">C</span>
-          <span class="tag">QEMU</span>
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-title">3D Pixel Art Game Project</div>
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">C#</span>
+              <span class="tag">Shader Graph</span>
+            </div>
+            <p>
+              Vroidモデルとドット絵シェーダーを使用した、3D空間でのドット絵風ゲーム。<br />
+              独自の世界観を表現するために、シェーダーの調整に注力しました。
+            </p>
+            <a href="#">View on GitHub</a>
+          </div>
         </div>
-        <p>
-          「ゼロからのOS自作入門」をベースに、Dockerで再現性のあるビルド環境を構築。<br />
-          クロスコンパイル環境のセットアップをコンテナ化し、環境差異によるエラーを解消しました。
-        </p>
-        <a href="#">View on GitHub</a>
+
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-title">Custom OS Development Env</div>
+            <div class="tags">
+              <span class="tag">Docker</span>
+              <span class="tag">C</span>
+              <span class="tag">QEMU</span>
+            </div>
+            <p>
+              「ゼロからのOS自作入門」をベースに、Dockerで再現性のあるビルド環境を構築。<br />
+              クロスコンパイル環境のセットアップをコンテナ化し、環境差異によるエラーを解消しました。
+            </p>
+            <a href="#">View on GitHub</a>
+          </div>
+        </div>
       </div>
     </section>
 
