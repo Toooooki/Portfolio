@@ -55,6 +55,21 @@
         display: inline-block;
         color: #111;
       }
+
+      /* カテゴリ見出し */
+      h3 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        color: #444;
+        font-size: 1.3em;
+        border-left: 5px solid #ddd;
+        padding-left: 15px;
+      }
+      /* 最初の見出しはマージンを少し削る */
+      h3:first-of-type {
+        margin-top: 10px;
+      }
+
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -96,12 +111,40 @@
         display: flex;
         flex-direction: column;
       }
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
       .project-title {
         font-weight: bold;
         font-size: 1.2em;
-        margin-bottom: 10px;
         color: #222;
+        margin: 0;
+        line-height: 1.3;
       }
+
+      /* ステータスバッジ */
+      .status-badge {
+        font-size: 0.75em;
+        padding: 3px 8px;
+        border-radius: 12px;
+        color: #fff;
+        white-space: nowrap;
+        margin-left: 10px;
+        height: fit-content;
+      }
+      .status-active {
+        background-color: #28a745;
+      } /* 緑：開発中 */
+      .status-done {
+        background-color: #17a2b8;
+      } /* 青：完成 */
+      .status-stop {
+        background-color: #6c757d;
+      } /* グレー：停止 */
+
       .tags {
         margin-bottom: 15px;
       }
@@ -118,7 +161,45 @@
       .project-content p {
         margin-bottom: 20px;
         flex-grow: 1;
+        font-size: 0.95em;
       }
+
+      /* ボタンリンク */
+      .links {
+        margin-top: auto;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.9em;
+        transition: opacity 0.3s;
+        text-align: center;
+      }
+      .btn-github {
+        background-color: #24292e;
+        color: #fff;
+      }
+      .btn-detail {
+        background-color: #0066cc;
+        color: #fff;
+      }
+      .btn-disabled {
+        background-color: #e0e0e0;
+        color: #888;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .btn:hover {
+        opacity: 0.8;
+        text-decoration: none;
+      }
+
       a {
         color: #0066cc;
         text-decoration: none;
@@ -131,6 +212,7 @@
         color: #888;
         font-size: 0.9em;
         margin-top: 50px;
+        padding-bottom: 20px;
       }
     </style>
   </head>
@@ -158,17 +240,94 @@
       </p>
     </section>
 
+    <section id="research">
+      <h2>Research</h2>
+      <div class="projects-grid">
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-header">
+              <span class="project-title">脳画像解析の研究 (LBP/LBP-TOP)</span>
+            </div>
+            <p>
+              卒業研究として、Local Binary Patterns (LBP)
+              を用いた脳画像のテクスチャ解析に取り組んでいます。
+              現在は動画解析への応用（LBP-TOP）を含め、特定パターンの抽出精度向上を検証中です。
+            </p>
+            <div class="links"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="skills">
       <h2>Skills</h2>
       <p>
-        <strong>Languages:</strong> C#, Python, C, Java<br />
+        <strong>Languages:</strong> C#, Python, C, Java, JavaScript<br />
         <strong>Tools & Frameworks:</strong> Unity, Docker, Linux (Ubuntu/WSL),
-        OpenCV<br />
+        OpenCV, React/Next.js<br />
       </p>
     </section>
 
     <section id="works">
       <h2>Works</h2>
+
+      <h3>🚀 鋭意開発中 (In Progress)</h3>
+      <div class="projects-grid">
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-header">
+              <span class="project-title">Moon Viewing WebApp</span>
+              <span class="status-badge status-active">Dev</span>
+            </div>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">WebAPI</span>
+            </div>
+            <p>
+              「月をもっと身近に」をテーマに、現在の月の満ち欠けや位置情報をシンプルに可視化するWebアプリ。
+            </p>
+            <div class="links">
+              <a
+                href="https://github.com/Toooooki"
+                target="_blank"
+                class="btn btn-github"
+                >GitHub</a
+              >
+              <a href="moon_project.html" class="btn btn-detail">詳細・背景</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-header">
+              <span class="project-title">Pixel Art Shader for Unity</span>
+              <span class="status-badge status-active">Dev</span>
+            </div>
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">Shader Graph</span>
+              <span class="tag">HLSL</span>
+            </div>
+            <p>
+              3Dモデルをリアルタイムでドット絵風にレンダリングするシェーダー開発。独自の質感表現を追求中。
+            </p>
+            <div class="links">
+              <a
+                href="https://github.com/Toooooki"
+                target="_blank"
+                class="btn btn-github"
+                >GitHub</a
+              >
+              <a href="shader_project.html" class="btn btn-detail"
+                >詳細・背景</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>✅ 完成 (Completed)</h3>
       <div class="projects-grid">
         <div class="project-item">
           <div class="project-media">
@@ -178,48 +337,124 @@
             </video>
           </div>
           <div class="project-content">
-            <div class="project-title">高専祭 魔法再現プログラム</div>
+            <div class="project-header">
+              <span class="project-title">高専祭 魔法再現プログラム</span>
+              <span class="status-badge status-done">Done</span>
+            </div>
             <div class="tags">
               <span class="tag">Unity</span>
               <span class="tag">C#</span>
               <span class="tag">VFX Graph</span>
             </div>
             <p>
-              高専祭で展示した、魔法の発動を視覚的に再現するインタラクティブなプログラム。<br />
+              高専祭で展示した、魔法の発動を視覚的に再現するインタラクティブなプログラム。
               パーティクルシステムを駆使し、没入感のあるエフェクトを実装しました。
             </p>
+            <div class="links">
+              <a href="magic_project.html" class="btn btn-detail">詳細・背景</a>
+            </div>
           </div>
         </div>
 
         <div class="project-item">
           <div class="project-content">
-            <div class="project-title">3D Pixel Art Game Project</div>
+            <div class="project-header">
+              <span class="project-title">じゃんけん進化系カードゲーム</span>
+              <span class="status-badge status-done">Done</span>
+            </div>
             <div class="tags">
-              <span class="tag">Unity</span>
-              <span class="tag">C#</span>
-              <span class="tag">Shader Graph</span>
+              <span class="tag">Game Dev</span>
+              <span class="tag">Internship</span>
             </div>
             <p>
-              Vroidモデルとドット絵シェーダーを使用した、3D空間でのドット絵風ゲーム。<br />
-              独自の世界観を表現するために、シェーダーの調整に注力しました。
+              インターンシップにてチーム開発。従来のじゃんけんに戦略性を加えた対戦ゲーム。
             </p>
-            <a href="#">View on GitHub</a>
+            <div class="links">
+              <span class="btn btn-disabled">Code非公開</span>
+              <a href="cardgame_project.html" class="btn btn-detail"
+                >詳細・背景</a
+              >
+            </div>
           </div>
         </div>
 
         <div class="project-item">
           <div class="project-content">
-            <div class="project-title">Custom OS Development Env</div>
+            <div class="project-header">
+              <span class="project-title">多倍長整数 四則演算ライブラリ</span>
+              <span class="status-badge status-done">Done</span>
+            </div>
+            <div class="tags">
+              <span class="tag">C</span>
+              <span class="tag">Algorithm</span>
+            </div>
+            <p>
+              標準型では扱えない巨大な桁数の整数を扱うための四則演算プログラムの実装。
+            </p>
+            <div class="links">
+              <a
+                href="https://github.com/Toooooki"
+                target="_blank"
+                class="btn btn-github"
+                >GitHub</a
+              >
+              <a href="bigint_project.html" class="btn btn-detail"
+                >詳細・背景</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>⏸ 開発休止中 (On Hold)</h3>
+      <div class="projects-grid">
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-header">
+              <div class="project-title">Custom OS Development Env</div>
+              <span class="status-badge status-stop">Hold</span>
+            </div>
             <div class="tags">
               <span class="tag">Docker</span>
               <span class="tag">C</span>
               <span class="tag">QEMU</span>
             </div>
             <p>
-              「ゼロからのOS自作入門」をベースに、Dockerで再現性のあるビルド環境を構築。<br />
-              クロスコンパイル環境のセットアップをコンテナ化し、環境差異によるエラーを解消しました。
+              「ゼロからのOS自作入門」をベースに、Dockerで再現性のあるビルド環境を構築。
+              クロスコンパイル環境のセットアップをコンテナ化しました。
             </p>
-            <a href="#">View on GitHub</a>
+            <div class="links">
+              <a
+                href="https://github.com/Toooooki"
+                target="_blank"
+                class="btn btn-github"
+                >GitHub</a
+              >
+              <a href="os_project.html" class="btn btn-detail">詳細・背景</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-content">
+            <div class="project-header">
+              <span class="project-title">VRoid for Unity Integration</span>
+              <span class="status-badge status-stop">Hold</span>
+            </div>
+            <div class="tags">
+              <span class="tag">Unity</span>
+              <span class="tag">VRoid SDK</span>
+            </div>
+            <p>VRoidモデルをUnity上で動的に操作・制御する検証プロジェクト。</p>
+            <div class="links">
+              <a
+                href="https://github.com/Toooooki"
+                target="_blank"
+                class="btn btn-github"
+                >GitHub</a
+              >
+              <a href="vroid_project.html" class="btn btn-detail">詳細・背景</a>
+            </div>
           </div>
         </div>
       </div>
