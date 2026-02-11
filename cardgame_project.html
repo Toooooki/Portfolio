@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strategic Card Battle Game - Project Details</title>
+    <style>
+      /* --- ベーススタイル（他ページと統一） --- */
+      body {
+        font-family:
+          "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+          sans-serif;
+        line-height: 1.8;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        background-color: #f4f7f6;
+      }
+
+      /* --- ヘッダー --- */
+      header {
+        padding: 40px 0 20px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 40px;
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        color: #555;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: #0066cc;
+      }
+      .back-link::before {
+        content: "←";
+        margin-right: 5px;
+      }
+
+      h1 {
+        margin: 10px 0;
+        font-size: 2.2em;
+        color: #111;
+      }
+      .project-subtitle {
+        color: #666;
+        font-size: 1.1em;
+      }
+
+      /* --- メインビジュアル（機密保持用） --- */
+      .hero-confidential {
+        width: 100%;
+        height: 300px;
+        border-radius: 12px;
+        background-color: #e9ecef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 40px;
+        color: #6c757d;
+        text-align: center;
+      }
+      .lock-icon {
+        font-size: 3em;
+        margin-bottom: 15px;
+      }
+      .confidential-text {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .confidential-sub {
+        font-size: 0.9em;
+        margin-top: 5px;
+      }
+
+      /* --- 情報カード --- */
+      .info-card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      @media (min-width: 600px) {
+        .info-card {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .info-item h3 {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #888;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.05em;
+        border: none;
+        padding-left: 0;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        background-color: #e0f2fe;
+        color: #0369a1;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        font-weight: 500;
+      }
+
+      /* --- 本文セクション --- */
+      section {
+        margin-bottom: 50px;
+      }
+      h2 {
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+        color: #222;
+      }
+      h3 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #444;
+        border-left: 4px solid #ddd;
+        padding-left: 10px;
+      }
+      p {
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      /* --- 概念図・ダイアグラム用 --- */
+      .diagram-box {
+        background-color: #fff;
+        border: 1px dashed #bbb;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+      }
+      .diagram-box img {
+        max-width: 100%;
+        height: auto;
+      }
+      .diagram-caption {
+        display: block;
+        margin-top: 10px;
+        font-size: 0.85em;
+        color: #666;
+      }
+
+      /* --- フッター --- */
+      footer {
+        text-align: center;
+        color: #888;
+        border-top: 1px solid #ddd;
+        padding-top: 30px;
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back-link">Back to Portfolio</a>
+      <h1>Strategic Card Battle Game</h1>
+      <p class="project-subtitle">
+        リソース管理とリスク計算を重視した、じゃんけん進化系カードゲーム
+      </p>
+    </header>
+
+    <div class="hero-confidential">
+      <div class="lock-icon">🔒</div>
+      <div class="confidential-text">Confidential Project</div>
+      <div class="confidential-sub">
+        インターンシップ規定により、実際のゲーム画面・コードは非公開です。<br />本ページでは実装したロジックの概念と設計について解説します。
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-item">
+        <h3>Technologies Used</h3>
+        <div class="tags">
+          <span class="tag">Unity (C#)</span>
+          <span class="tag">Object-Oriented Design</span>
+          <span class="tag">Game Logic</span>
+          <span class="tag">Team Dev (5 Members)</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <h3>Project Info</h3>
+        <p style="margin: 0; font-size: 0.95em">
+          <strong>Role:</strong> Backend Engineer (Logic)<br />
+          <strong>Type:</strong> Internship Project<br />
+          <strong>Focus:</strong> Resource Management System
+        </p>
+      </div>
+    </div>
+
+    <section>
+      <h2>Overview / プロジェクト概要</h2>
+      <p>
+        じゃんけんのルールをベースに、リソース管理（手札枚数・ライフ）の要素を加えた2D戦略ゲームです。
+        プレイヤーはホテルの扉の先に潜む未知の敵に対し、手持ちのカードを出して攻略します。
+      </p>
+      <p>
+        単なる運ゲーではなく、「勝利すればカード補充」「敗北・あいこならリソース減少」というリスク＆リターンの概念があり、手札をどう温存し、どこで勝負に出るかという戦略性が求められます。
+        5名のチーム開発において、私はカード管理、勝敗判定、補填アルゴリズムの実装を担当しました。
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Highlights / 技術的なこだわり</h2>
+
+      <h3>Dictionaryによるアセット管理の最適化</h3>
+      <p>
+        カードの種類（グー・チョキ・パー等）と、それに対応するプレハブ（<code>GameObject</code>）の紐付けに
+        <code>Dictionary</code> を採用しました。
+        <code>if</code
+        >文や<code>switch</code>文で分岐させるのではなく、Dictionaryのキー検索を利用することで、カードの種類が増えても計算量
+        <span style="font-family: monospace; background: #eee; padding: 0 4px"
+          >O(1)</span
+        >
+        で即座に生成対象を特定できる設計にしました。
+      </p>
+
+      <h3>データ(Model)と見た目(View)の分離</h3>
+      <p>
+        カードのパラメータ（ID, 種類,
+        数値）を管理する論理データクラス（<code>CardDB</code>）と、
+        画面上に表示されるゲームオブジェクトを管理するリストを分離して実装しました。
+        これにより、ゲームロジック側では軽量なデータクラスのみを操作し、必要なタイミングでのみ
+        <code>Instantiate</code> や
+        <code>Destroy</code> を行うことで、メモリ効率と可読性を向上させました。
+      </p>
+
+      <div class="diagram-box">
+        <div class="diagram-code">
+          <span class="code-comment"
+            >// Dictionaryを用いたアセット管理と生成ロジック（概念コード）</span
+          ><br />
+          <span class="code-keyword">private</span> Dictionary&lt;<span
+            class="code-type"
+            >CardType</span
+          >, <span class="code-type">GameObject</span>&gt; cardPrefabs;<br />
+          <br />
+          <span class="code-keyword">void</span> Start() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"
+            >// 初期化時にプレハブをキャッシュ</span
+          ><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;cardPrefabs =
+          <span class="code-keyword">new</span> Dictionary&lt;<span
+            class="code-type"
+            >CardType</span
+          >, <span class="code-type">GameObject</span>&gt;() {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          <span class="code-type">CardType</span>.Rock, Resources.Load(<span
+            class="code-string"
+            >"Prefabs/Rock"</span
+          >) },<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          <span class="code-type">CardType</span>.Paper, Resources.Load(<span
+            class="code-string"
+            >"Prefabs/Paper"</span
+          >) }<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;};<br />
+          }<br />
+          <br />
+          <span class="code-keyword">void</span> AddHand(<span class="code-type"
+            >CardType</span
+          >
+          type) {<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"
+            >// 論理データの追加</span
+          ><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">var</span> data =
+          <span class="code-keyword">new</span>
+          <span class="code-type">CardData</span>(type);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;logicList.Add(data);<br />
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"
+            >// DictionaryからO(1)でプレハブを取得して生成</span
+          ><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-type">GameObject</span> obj
+          = Instantiate(cardPrefabs[type], handPos);<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;obj.Setup(data);
+          <span class="code-comment">// データ注入</span><br />
+          }
+        </div>
+        <span class="caption">実装ロジックの簡略化イメージ</span>
+      </div>
+
+      <h3>チーム開発への貢献</h3>
+      <p>
+        <code>Resources.Load</code>
+        を用いた動的読み込みとプレハブ化を徹底することで、
+        デザイナーが作成したカード画像をエンジニアがコードを書き換えることなく差し替えられる環境を構築しました。
+        これにより、デザイン修正とロジック修正の手戻りを最小限に抑え、開発効率を向上させました。
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Lyxsly</p>
+    </footer>
+  </body>
+</html>

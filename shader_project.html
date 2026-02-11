@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Art Shader - Project Details</title>
+    <style>
+      /* --- ベーススタイル（共通） --- */
+      body {
+        font-family:
+          "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+          sans-serif;
+        line-height: 1.8;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        background-color: #f4f7f6;
+      }
+
+      /* --- ヘッダー --- */
+      header {
+        padding: 40px 0 20px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 40px;
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        color: #555;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: #0066cc;
+      }
+      .back-link::before {
+        content: "←";
+        margin-right: 5px;
+      }
+
+      h1 {
+        margin: 10px 0;
+        font-size: 2.2em;
+        color: #111;
+      }
+      .project-subtitle {
+        color: #666;
+        font-size: 1.1em;
+      }
+
+      /* --- メインビジュアル --- */
+      .hero-media {
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+        background-color: #000;
+        line-height: 0;
+      }
+      .hero-media img,
+      .hero-media video {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* --- 情報カード & タグ --- */
+      .info-card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      @media (min-width: 600px) {
+        .info-card {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .info-item h3 {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #888;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.05em;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        background-color: #e0f2fe;
+        color: #0369a1;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        font-weight: 500;
+      }
+
+      /* --- 本文セクション --- */
+      section {
+        margin-bottom: 50px;
+      }
+      h2 {
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+        color: #222;
+      }
+      h3 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #444;
+        border-left: 4px solid #ddd;
+        padding-left: 10px;
+      }
+      p {
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      code {
+        background-color: #eee;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9em;
+        color: #d63384;
+      }
+
+      /* --- 埋め込み画像・動画用スタイル --- */
+      .content-media {
+        margin: 30px 0;
+        text-align: center;
+      }
+      .content-media img,
+      .content-media video {
+        max-width: 100%;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+      .caption {
+        font-size: 0.85em;
+        color: #777;
+        margin-top: 8px;
+        display: block;
+      }
+
+      /* --- ボタン --- */
+      .action-buttons {
+        text-align: center;
+        margin: 60px 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: opacity 0.3s;
+      }
+      .btn-github {
+        background-color: #24292e;
+        color: #fff;
+      }
+      .btn:hover {
+        opacity: 0.8;
+      }
+
+      footer {
+        text-align: center;
+        color: #888;
+        border-top: 1px solid #ddd;
+        padding-top: 30px;
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back-link">Back to Portfolio</a>
+      <h1>Pixel Art Shader for Unity</h1>
+      <p class="project-subtitle">
+        URP Fullscreen
+        Shaderを用いた、3Dモデルのドット絵風リアルタイムレンダリング
+      </p>
+    </header>
+
+    <div class="hero-media">
+      <img src="images/UnityShaderSample.png" alt="Current Development State" />
+    </div>
+
+    <div class="info-card">
+      <div class="info-item">
+        <h3>Technologies Used</h3>
+        <div class="tags">
+          <span class="tag">Unity (URP)</span>
+          <span class="tag">HLSL</span>
+          <span class="tag">Shader Graph</span>
+          <span class="tag">Post-Processing</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <h3>Project Info</h3>
+        <p style="margin: 0; font-size: 0.95em">
+          <strong>Status:</strong> In Development<br />
+          <strong>Base:</strong> Unity-URP-Outlines<br />
+          <strong>Goal:</strong> VRoid Game Integration
+        </p>
+      </div>
+    </div>
+
+    <section>
+      <h2>Overview / 背景</h2>
+      <p>
+        個人開発でリッチな3Dゲームを作りたいが、3Dモデル作成のコストはかけられないという課題がありました。
+        そこで、高品質なキャラクターモデルを容易に作成できる
+        <strong>VRoid Studio</strong>
+        を採用しましたが、そのまま使うと「よくあるVRoid製のゲーム」として埋もれてしまいます。
+      </p>
+      <p>
+        また当初は2Dドット絵のゲーム開発も検討しましたが、キャラクターのアニメーション全パターンを描き下ろす工数が膨大で断念しました。
+        そこで、<strong>3Dモデルの手軽さとドット絵独自の味を両立させる解決策</strong>として、このシェーダー開発に着手しました。
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Evolution / 技術的アプローチの変遷</h2>
+
+      <h3>Phase 1: RenderTextureアプローチ（初期案）</h3>
+      <p>
+        開発当初は、カメラの描画内容を低解像度の
+        <code>RenderTexture</code> を使用する方法を試みました。
+        しかし、この手法ではジャギーのコントロールが難しく、単に解像度を下げただけの荒い映像になりがちで、意図したドット絵らしさが出せませんでした。
+      </p>
+
+      <div class="content-media">
+        <video controls muted playsinline loop>
+          <source src="videos/UnityShaderVideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <span class="caption"
+          >初期プロトタイプ：RenderTextureによる低解像度化</span
+        >
+      </div>
+
+      <h3>Phase 2: URP Fullscreen Shaderへの移行（現在）</h3>
+      <p>
+        より高度な制御を行うため、URPのポストプロセス（Fullscreen
+        Shader）による実装に切り替えました。 ベースとしてオープンソースの
+        <a
+          href="https://github.com/Robinseibold/Unity-URP-Outlines"
+          target="_blank"
+          >Unity-URP-Outlines</a
+        >
+        を採用し、独自の改造を施しています。
+      </p>
+
+      <div class="content-media">
+        <img
+          src="images/UnityFullScreenShader.png"
+          alt="Shader Graph Modification"
+        />
+        <span class="caption">Fullscreen Shaderの改造画面</span>
+      </div>
+
+      <p>
+        <strong>主な改造点：</strong><br />
+        元のシェーダーはシンプルな輪郭線描画のみでしたが、法線（Normal）情報を解析し、
+        凸（山折り）と凹（谷折り）で輪郭線の色を変える処理を追加し凹凸の判別がつきやすいようにしました。
+      </p>
+    </section>
+
+    <section>
+      <h2>Current Challenges & Future / 課題と展望</h2>
+      <p>
+        <strong>現在の課題：</strong><br />
+        オブジェクト同士が重なった際（深度値が近い場合）、輪郭線の描画が干渉してしまう問題が発生しています。
+        現在、Depth BufferとNormal
+        Bufferの比較ロジックを見直し、重なり順を正しく判定できるよう修正中です。
+      </p>
+      <p>
+        <strong>今後の展望：</strong><br />
+        この問題が解決次第、現在開発を一時停止しているVRoidベースの3Dアクションゲームに本シェーダーを適用し、
+        独自のビジュアルスタイルを持つ作品として完成させる予定です。
+      </p>
+    </section>
+
+    <div class="action-buttons">
+      <a
+        href="https://github.com/Toooooki"
+        target="_blank"
+        class="btn btn-github"
+        >GitHubを見る</a
+      >
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Lyxsly</p>
+    </footer>
+  </body>
+</html>

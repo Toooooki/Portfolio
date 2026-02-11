@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Precision Integer Library - Project Details</title>
+    <style>
+      /* --- ベーススタイル --- */
+      body {
+        font-family:
+          "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+          sans-serif;
+        line-height: 1.8;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        background-color: #f4f7f6;
+      }
+
+      /* --- ヘッダー --- */
+      header {
+        padding: 40px 0 20px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 40px;
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        color: #555;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 10px;
+        transition: color 0.2s;
+      }
+      .back-link:hover {
+        color: #0066cc;
+      }
+      .back-link::before {
+        content: "←";
+        margin-right: 5px;
+      }
+
+      h1 {
+        margin: 10px 0;
+        font-size: 2.2em;
+        color: #111;
+      }
+      .project-subtitle {
+        color: #666;
+        font-size: 1.1em;
+      }
+
+      /* --- メインビジュアル（ターミナル画面風） --- */
+      .hero-terminal {
+        width: 100%;
+        background-color: #2d2d2d;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        margin-bottom: 40px;
+        font-family: "Consolas", "Monaco", monospace;
+        color: #f8f8f2;
+        overflow-x: auto;
+      }
+      .term-prompt {
+        color: #a6e22e;
+        font-weight: bold;
+      }
+      .term-cmd {
+        color: #f8f8f2;
+      }
+      .term-output {
+        color: #e6db74;
+      }
+
+      /* --- 情報カード --- */
+      .info-card {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      @media (min-width: 600px) {
+        .info-card {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .info-item h3 {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #888;
+        margin: 0 0 8px 0;
+        letter-spacing: 0.05em;
+        border: none;
+        padding-left: 0;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        background-color: #e0f2fe;
+        color: #0369a1;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        font-weight: 500;
+      }
+
+      /* --- 本文セクション --- */
+      section {
+        margin-bottom: 50px;
+      }
+      h2 {
+        border-bottom: 2px solid #3b82f6;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+        color: #222;
+      }
+      h3 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: #444;
+        border-left: 4px solid #ddd;
+        padding-left: 10px;
+      }
+      p {
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      /* --- コードスニペット --- */
+      .code-block {
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 15px;
+        font-family: "Consolas", monospace;
+        font-size: 0.9em;
+        overflow-x: auto;
+        margin: 20px 0;
+      }
+      .code-comment {
+        color: #6a9955;
+      }
+      .code-keyword {
+        color: #d63384;
+        font-weight: bold;
+      }
+      .code-type {
+        color: #005cc5;
+      }
+
+      footer {
+        text-align: center;
+        color: #888;
+        border-top: 1px solid #ddd;
+        padding-top: 30px;
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="back-link">Back to Portfolio</a>
+      <h1>Multi-Precision Integer Library</h1>
+      <p class="project-subtitle">
+        標準型を超えた巨大な数値を扱うための、C言語による数値計算ライブラリ
+      </p>
+    </header>
+
+    <div class="hero-terminal">
+      <div>
+        <span class="term-prompt">user@linux:~/BigInteger$</span>
+        <span class="term-cmd">./calc_test</span>
+      </div>
+      <div>Calculating 100! (Factorial)...</div>
+      <br />
+      <div class="term-output">
+        93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
+      </div>
+      <br />
+      <div>
+        <span class="term-prompt">user@linux:~/BigInteger$</span>
+        <span class="term-cmd">_</span>
+      </div>
+    </div>
+    <!-- <div class="hero-media">
+      <img src="images/BigIntegerImg.png" alt="Current Development State" />
+    </div> -->
+
+    <div class="info-card">
+      <div class="info-item">
+        <h3>Technologies Used</h3>
+        <div class="tags">
+          <span class="tag">C Language</span>
+          <span class="tag">Pointer & Memory</span>
+          <span class="tag">Algorithm (GCD/Sort)</span>
+          <span class="tag">Struct Design</span>
+        </div>
+      </div>
+      <div class="info-item">
+        <h3>Project Info</h3>
+        <p style="margin: 0; font-size: 0.95em">
+          <strong>Role:</strong> Solo Developer<br />
+          <strong>Focus:</strong> Low-layer Logic<br />
+          <strong>Feature:</strong> Integer & Fraction Support
+        </p>
+      </div>
+    </div>
+
+    <section>
+      <h2>Overview / プロジェクト概要</h2>
+      <p>
+        C言語の標準型（<code>long long</code
+        >等）では扱いきれない巨大な桁数の整数を計算するためのライブラリをゼロから実装しました。
+        四則演算に加え、ユークリッドの互除法を用いた最大公約数（GCD）の算出、それを利用した分数の約分機能なども搭載しています。
+      </p>
+      <p>
+        既存のライブラリ（GMP等）を使用せず、配列とポインタ操作によって筆算のロジックをコード化することで、
+        コンピュータが数値をどうメモリ上で扱い、計算しているのかという基礎原理の理解を深めることを目的として開発しました。
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Highlights / 技術的なこだわり</h2>
+
+      <h3>構造体によるデータ抽象化</h3>
+      <p>
+        数値の符号と各桁の数値を構造体としてパッケージ化し、ポインタ渡しで関数間を連携させる設計にしました。
+        また、整数だけでなく分数構造体（<code>BUNSU</code>）を定義し、分母・分子をそれぞれ多倍長整数で保持することで、誤差のない有理数計算を実現しました。
+      </p>
+
+      <div class="code-block">
+        <span class="code-keyword">struct</span>
+        <span class="code-type">NUMBER</span> {
+        <span class="code-type">int</span> n[KETA];
+        <span class="code-comment">// 各桁の値を格納する配列</span>
+        <span class="code-type">int</span> sign;
+        <span class="code-comment">// 符号 (0:負, 1:正)</span>
+        };
+
+        <span class="code-keyword">struct</span>
+        <span class="code-type">BUNSU</span> {
+        <span class="code-keyword">struct</span>
+        <span class="code-type">NUMBER</span> bunshi;
+        <span class="code-comment">// 分子 (BigInt)</span>
+        <span class="code-keyword">struct</span>
+        <span class="code-type">NUMBER</span> bunbo;
+        <span class="code-comment">// 分母 (BigInt)</span>
+        <span class="code-type">int</span> sign; };
+      </div>
+
+      <h3>アルゴリズムの実装</h3>
+      <p>
+        単純な加減乗除だけでなく、再帰的なロジックが必要なアルゴリズムも実装しています。
+        特に分数の約分処理（<code>B_yakubun</code>）においては、多倍長整数同士のユークリッドの互除法（<code>gcd</code>）を用いて最大公約数を求め、分母・分子を割り算する処理を実装しました。
+        これにより、計算結果が常に既約分数となるように制御しています。
+      </p>
+
+      <h3>エッジケースへの対応</h3>
+      <p>
+        引き算における繰り下がりや、負の数同士の掛け算など、符号処理でバグが発生しやすい箇所を重点的に検証しました。
+        絶対値の比較関数（<code>numComp</code>）を実装し、数値の大小関係に基づいて計算ロジックを分岐させています。
+      </p>
+    </section>
+
+    <section>
+      <h2>Reflections & Future / 振り返りと今後の課題</h2>
+      <p>
+        本ライブラリは学習初期に作成したものであり、現在は以下の改善点があることを認識しています。
+      </p>
+      <ul>
+        <li>
+          <strong>メモリ効率：</strong
+          >現在は1桁を<code>int</code>（32bit）で管理していますが、ビット演算を用いて<code>uint64_t</code>等に複数の桁を詰め込むことで、メモリ効率を改善できます。
+        </li>
+        <li>
+          <strong>動的確保：</strong>桁数が固定長（<code>#define KETA</code
+          >）ですが、<code>malloc</code>を用いた動的配列に変更することで、理論上メモリが許す限りの桁数を扱えるように改良可能です。
+        </li>
+      </ul>
+    </section>
+
+    <div class="action-buttons">
+      <a
+        href="https://github.com/Toooooki/BigInteger"
+        target="_blank"
+        class="btn btn-github"
+        >GitHubを見る</a
+      >
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Lyxsly</p>
+    </footer>
+  </body>
+</html>
